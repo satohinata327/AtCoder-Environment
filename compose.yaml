@@ -1,0 +1,19 @@
+services:
+  atcoder:
+    build:
+      context: ./docker
+    volumes:
+      - atcoder-workspace:/workspace
+      - atcoder-home:/root
+    working_dir: /workspace/contests
+    stdin_open: true
+    tty: true
+
+volumes:
+  atcoder-workspace:
+    external: true
+    name: atcoder-workspace-linux
+
+  atcoder-home:
+    external: true
+    name: atcoder_atcoder-home

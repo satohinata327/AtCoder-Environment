@@ -1,0 +1,6 @@
+{
+  "name": "AtCoder",
+  "dockerComposeFile": "../compose.yaml",
+  "service": "atcoder",
+  "workspaceFolder": "/workspace/contests"
+}
