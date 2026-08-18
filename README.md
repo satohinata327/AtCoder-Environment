@@ -80,6 +80,13 @@ Cmd + Shift + P
 
 初回はDocker imageがbuildされます。
 
+Rebuildは以下。
+```text
+Cmd + Shift + P
+→ Dev Containers: Rebuild Container
+```
+
+
 ## AtCoderコードの準備
 
 Dev Container内では `/workspace/contests` がワークスペースとして開きます。
@@ -93,6 +100,30 @@ acc config default-task-choice all
 ```
 
 これにより `acc new` でそのコンテストの全問題を取得します。
+
+次に、session.jsonにAtCoderのセッションクッキーを保存します。
+
+AtCoderにログインした状態で、ブラウザのDeveloper ToolsからCookieを確認します。
+
+Chromeの場合：
+
+```text
+Developer Tools
+→ Application
+→ Cookies
+→ https://atcoder.jp
+→ REVEL_SESSION
+```
+
+REVEL_SESSIONの値をsession.jsonに保存します。
+```
+vim "$(acc config-dir)/session.json"
+```
+
+最後にCLIからログイン済みか確認できれば完了です。
+```
+acc session
+```
 
 ## Usage
 
