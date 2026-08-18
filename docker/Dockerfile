@@ -32,9 +32,7 @@ RUN python3 -m venv /opt/oj \
     && /opt/oj/bin/pip install --no-cache-dir online-judge-tools
 
 # atcoder-cli
-# acc new 時のログインチェックを削除
-RUN npm install -g atcoder-cli \
-    && python3 -c "from pathlib import Path; p=Path('/usr/local/lib/node_modules/atcoder-cli/bin/index.js'); s=p.read_text(); old='await s.checkSession()||await s.login();'; assert old in s, 'atcoder-cli login check pattern not found'; p.write_text(s.replace(old, '', 1))"
+RUN npm install -g atcoder-cli
 
 # ojrun
 COPY ojrun /usr/local/bin/ojrun
