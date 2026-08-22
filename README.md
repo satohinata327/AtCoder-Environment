@@ -121,9 +121,20 @@ vim "$(acc config-dir)/session.json"
 ```
 
 最後にCLIからログイン済みか確認できれば完了です。
-```
+```bash
 acc session
 ```
+
+### online-judge-tools 初期設定
+
+`acc` と `oj` はCookieを別々に管理しています。コンテスト中もサンプルを取得できるよう、以下の `cookie.jar` にある `REVEL_SESSION` を、上記の `session.json` と同じ値にします。
+
+```bash
+vim /root/.local/share/online-judge-tools/cookie.jar
+oj login --check https://atcoder.jp/
+```
+
+`You are logged in.` と表示されれば設定完了です。
 
 ## Usage
 
